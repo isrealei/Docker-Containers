@@ -1,32 +1,78 @@
 # leaflite
 
-### Project Description: Simple Website Deployment on EC2 Instance
+### V2
 
-This project involves deploying a simple static website to an Amazon EC2 instance using Docker. The website consists of HTML, CSS, and JavaScript files, and it is served using the Nginx web server. The process includes creating the website content, writing a Dockerfile to containerize the application, building the Docker image, and running the container on an EC2 instance.
+### Project Brief: **Deploying a Scalable Web Application with NGINX Reverse Proxy and Load Balancing**
 
-**Key Steps:**
-1. **Create Website Content:**
-   - Develop the HTML, CSS, and JavaScript files to form the static website.
+#### **Objective:**
+Expand upon the student's previous project of deploying a simple website using NGINX by introducing scalability and load balancing. The goal is to deploy three instances of a web application on the server and configure NGINX as a reverse proxy and load balancer. NGINX will direct external traffic to the backend application instances to ensure better performance, fault tolerance, and scalability.
 
-2. **Dockerize the Application:**
-   - Write a Dockerfile to use the official Nginx image and copy the website files into the appropriate directory for Nginx to serve.
+---
 
-3. **Build the Docker Image:**
-   - Build the Docker image locally to package the website and Nginx server.
+#### **Project Scope:**
+1. **Web Application Instances:**
+   - Deploy three instances of the same web application, each running in its own Docker container.
+   - The web application will be a basic HTML-based website (or a simple dynamic application if the student wishes to extend functionality).
 
-4. **Deploy to EC2 Instance:**
-   - Launch an Amazon EC2 instance.
-   - Install Docker on the EC2 instance.
-   - Transfer the Docker image to the EC2 instance or build it directly on the instance.
-   - Run the Docker container on the EC2 instance to serve the website.
+2. **NGINX Reverse Proxy and Load Balancing:**
+   - Configure NGINX to run either as a service on the host machine or as a Docker container.
+   - Set up NGINX as a reverse proxy to forward external HTTP requests to the backend web application instances.
+   - Implement load balancing to distribute incoming traffic evenly across the three backend instances.
 
-5. **Access the Website:**
-   - Configure security groups and firewall rules to allow HTTP traffic to the EC2 instance.
-   - Access the website using the EC2 instance's public IP address or domain name.
+3. **Networking:**
+   - Use Docker networks to enable communication between the NGINX container (if used) and the application containers.
+   - Expose the NGINX service on the host machine to handle external traffic.
 
-**Benefits:**
-- **Portability:** The website is containerized, making it easy to deploy across different environments.
-- **Simplicity:** Using Docker and Nginx simplifies the process of setting up a web server.
-- **Scalability:** The project can be easily scaled by running multiple containers or using container orchestration tools in the future.
+4. **Documentation and Testing:**
+   - Document the deployment process, including steps to configure and test the setup.
+   - Demonstrate the load balancing functionality by accessing the application through NGINX and observing the traffic distribution among backend instances.
 
-This project demonstrates the use of Docker for packaging and deploying web applications and leverages AWS EC2 for hosting, providing a straightforward approach to web deployment without the complexity of Kubernetes.
+---
+
+#### **Deliverables:**
+1. A fully functional setup with:
+   - Three running instances of the web application.
+   - NGINX configured as a reverse proxy and load balancer.
+2. Docker Compose or individual Docker commands used for deployment.
+3. Configuration files, including:
+   - NGINX configuration file (`nginx.conf` or equivalent).
+   - Any necessary Docker Compose YAML files.
+4. Documentation covering:
+   - Deployment steps.
+   - Testing procedures (e.g., how to test load balancing behavior).
+
+---
+
+#### **Requirements for the Student:**
+
+1. **Knowledge and Tools:**
+   - Familiarity with Docker and Docker Compose.
+   - Understanding of NGINX configuration for reverse proxy and load balancing.
+   - Basic networking concepts, including how Docker manages container networking.
+
+2. **Environment Setup:**
+   - A Linux server or a local machine with Docker and Docker Compose installed.
+   - Text editor or IDE to modify and create configuration files.
+   - Access to a web browser or tools like `curl` to test the application.
+
+3. **Development Steps:**
+   - Create a Dockerfile for the web application (if necessary).
+   - Deploy three instances of the web application using Docker.
+   - Configure NGINX to act as a reverse proxy and load balancer:
+     - Define upstream servers for the backend instances.
+     - Configure load balancing in NGINX (e.g., round-robin or least connections).
+   - Test the setup by accessing the application via NGINX and verifying load balancing.
+
+4. **Testing Scenarios:**
+   - Simulate external traffic by sending multiple HTTP requests and observe backend traffic distribution.
+   - Temporarily stop one backend instance and ensure NGINX continues routing traffic to the other instances.
+
+---
+
+#### **Expected Outcome:**
+By the end of this project, the student will have a clear understanding of:
+- How to deploy multiple instances of an application in Docker.
+- The role of NGINX as a reverse proxy and load balancer.
+- The importance of load balancing for scalability and fault tolerance.
+
+This project serves as an excellent stepping stone towards advanced topics in containerization, microservices architecture, and system scalability.
