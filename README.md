@@ -1,12 +1,13 @@
 # leaflite
 
-### Project Description: Simple Website Deployment on EC2 Instance
+### Project Description: Simple Website Deployment on a Virtual Machine(EC2 Instance)
 
-This project involves deploying a simple static website to an Amazon EC2 instance using Docker. The website consists of HTML, CSS, and JavaScript files, and it is served using the Nginx web server. The process includes creating the website content, writing a Dockerfile to containerize the application, building the Docker image, and running the container on an EC2 instance.
+This project involves deploying a simple static website to a Virtual machine (Amazon EC2 instance Droplets, Linode) using Docker. The website consists of HTML, CSS, and JavaScript files, and it is served using the Nginx web server. The process includes creating the website content or downloading already made website files, writing a Dockerfile to containerize the application, building the Docker image, and running the container on a virtual server.
 
 **Key Steps:**
-1. **Create Website Content:**
+1. **Create Website Content or Download the website content from tooplate:**
    - Develop the HTML, CSS, and JavaScript files to form the static website.
+   - or Download the webiste file from [here](https://www.tooplate.com/).
 
 2. **Dockerize the Application:**
    - Write a Dockerfile to use the official Nginx image and copy the website files into the appropriate directory for Nginx to serve.
@@ -15,8 +16,8 @@ This project involves deploying a simple static website to an Amazon EC2 instanc
    - Build the Docker image locally to package the website and Nginx server.
 
 4. **Deploy to EC2 Instance:**
-   - Launch an Amazon EC2 instance.
-   - Install Docker on the EC2 instance.
+   - Launch an Amazon EC2 instance or any virtual machine of your choice.
+   - Install Docker on the EC2 instance. For ubuntu install [here](https://docs.docker.com/engine/install/ubuntu/), for centOs install [here](https://docs.docker.com/engine/install/centos/).
    - Transfer the Docker image to the EC2 instance or build it directly on the instance.
    - Run the Docker container on the EC2 instance to serve the website.
 
