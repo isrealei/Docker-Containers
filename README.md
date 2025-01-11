@@ -1,6 +1,6 @@
 # leaflite
 
-### Project Description: Simple Website Deployment on a Virtual Machine(EC2 Instance) using Docker. 
+### Project Description: Simple Website Deployment on a Virtual Machine(EC2 Instance) using Docker (V1). 
 
 This project involves deploying a simple static website to a Virtual machine (Amazon EC2 instance Droplets, Linode) using Docker. The website consists of HTML, CSS, and JavaScript files, and it is served using the Nginx web server. The process includes creating the website content or downloading already made website files, writing a Dockerfile to containerize the application, building the Docker image, and running the container on a virtual server.
 
